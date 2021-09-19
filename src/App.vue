@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Task Tracker" />
-    <AddTask />
+    <AddTask @add-task="addTask" />
     <Tasks @delete-task="deleteTask" @toggle-reminder="toggleReminder" :tasks="tasks" />
   </div>
 </template>
@@ -24,6 +24,9 @@
       }
     },
     methods: {
+      addTask(task) {
+        this.tasks = [...this.tasks, task]
+      },
       deleteTask(id) {
         if (confirm("Are you sure?")) {
           return this.tasks = this.tasks.filter(task => task.id !== id)
@@ -31,7 +34,7 @@
       },
       toggleReminder(id) {
         this.tasks = this.tasks.map(task => task.id === id ? { ...task, reminder: !task.reminder } : task )
-      }
+      },
     },
     created () {
       this.tasks = [
@@ -47,7 +50,7 @@
           day: "March 3rd at 1:30pm",
           reminder: true
         },
-                {
+        {
           id: 3,
           text: "Food Shopping",
           day: "March 4th at 11:00am",

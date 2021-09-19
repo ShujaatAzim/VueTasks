@@ -1,5 +1,5 @@
 <template>
-  <form class="add-form">
+  <form @submit="onSubmit" class="add-form">
     <div class="form-control">
       <label>Task</label>
       <input type="text" v-model="text" name="text" placeholder="Add Task" />
@@ -24,6 +24,15 @@
         text: '',
         day: '',
         reminder: false
+      }
+    },
+    methods: {
+      onSubmit(e) {
+        e.preventDefault()
+        if(!this.text) {
+          alert("Please enter a task")
+          return
+        }
       }
     }
   }

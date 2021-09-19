@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <Button text="Add Task" color="green" />
+    <Button @toggle-form="$emit('toggle-form')" :text="showForm ? 'Close' : 'Add Task'" :color="showForm ? 'red' : 'green'" />
   </header>
 </template>
 
@@ -13,7 +13,8 @@
       Button
     },
     props: {
-      title: String
+      title: String,
+      showForm: Boolean
     }
   }
 </script>

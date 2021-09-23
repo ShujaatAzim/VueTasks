@@ -1,13 +1,17 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <Button @btn-click="$emit('btn-click')" :text="showForm ? 'Close' : 'Add Task'" :color="showForm ? 'red' : 'green'" />
+    <Button 
+      @btn-click="$emit('btn-click')" 
+      :text="showForm ? 'Close' : 'Add Task'" 
+      :color="showForm ? 'red' : 'green'" 
+    />
   </header>
 </template>
 
 <script>
   import Button from './Button'
-  
+
   export default {
     name: "Header",
     components: {

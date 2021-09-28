@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header @btn-click="toggleForm" title="Task Tracker" :showForm="showForm" />
+    <Header @btn-click="toggleForm" title="VueTasks" :showForm="showForm" />
     <div>
       <AddTask v-if="showForm" @add-task="addTask" />
     </div>

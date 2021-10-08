@@ -1,7 +1,7 @@
 <template>
   <footer>
     <p>Created with Vue by Shujaat Azim</p>
-    <p>Copyright &copy; 2021</p>
+    <p>"Copyright" &copy; 2021</p>
   </footer>
 </template>
 

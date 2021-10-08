@@ -40,6 +40,7 @@
         })
         const data = await res.json()
         this.tasks = [...this.tasks, data]
+        this.showForm = false
       },
       async deleteTask(id) {
         if (confirm("Are you sure?")) {
